@@ -1,0 +1,11 @@
+services:
+  vai2oai:
+    build: .
+    container_name: vai2oai
+    ports:
+      - "${PORT:-8080}:8080"
+    env_file:
+      - .env
+    environment:
+      PORT: ${PORT:-8080}
+    restart: unless-stopped
